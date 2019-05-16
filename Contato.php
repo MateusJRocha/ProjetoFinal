@@ -53,8 +53,7 @@
                     <p>Departamento</p>
                     <select name="departamento">
                         <option value="administracao">Administracao</option>
-                        <option valiue="diretoria">Diretoria</option>
-                        <option value="redacao">Redação</option>
+                        <option valiue="diretoria">Funcionario</option>
                         <option value="informatica">Informatica</option>
                     </select>
                     
