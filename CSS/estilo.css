@@ -1,0 +1,53 @@
+body
+{
+    background-image: url("../Imagens/azul-claro.jpg");
+}
+
+#topo img
+{
+    margin: 1% 33%;
+    padding: 60px
+}
+
+#menu 
+{
+    margin:0% 5%;
+    width: 90%;
+    
+}
+
+#menu ul li
+{
+   font-weight: bold;    
+}
+
+#corpo h1
+{
+  margin: 1% 10%;
+  text-align: center;
+}
+#contato
+{
+    width: 20%;
+    margin: 0 auto;
+}
+
+
+#rodape
+{
+    margin: 5%;
+    text-align: center;
+    font-weight: bold;
+}
+
+#login
+{
+    border: 1px solid;
+    width: 25%;
+    margin: 3% auto;
+    text-align: center;
+    background-color: #a6e1ec;
+    border-radius: 6px;
+    box-shadow: 2px 2px;
+    padding: 2%;
+}
