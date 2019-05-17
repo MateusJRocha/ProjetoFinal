@@ -39,7 +39,7 @@
         
         <div id="corpo">
             <h1>Quem Somos?</h1>
-            <img src="#" alt=""/>
+            <img src="Imagens/Livro.png" alt=""/>
             
             <div id="textoQuemSomos">
                 <p>

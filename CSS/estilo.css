@@ -29,10 +29,16 @@ body
 
 #corpo img
 {
-    border: 1px solid #000;
-    padding: 100px;
+    padding: 5px;
     margin: 0 5%;
     float: left;
+    max-width: 20%;
+    max-height: 20%;
+}
+
+#corpo p
+{
+    margin: 0% 2%;
 }
 
 #corpo #textoQuemSomos
@@ -52,6 +58,7 @@ body
 
 #corpo .noticia img
 {
+    border: 1px solid #000;
     float: left;
     max-width: 90px;
     max-height: 90px;
