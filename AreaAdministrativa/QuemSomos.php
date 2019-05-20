@@ -37,6 +37,16 @@
         
         <div id="corpo">
             <h1>Quem Somos</h1>
+            
+            <div id="QuemSomosAdm">
+                <textarea></textarea>
+                <br>
+                <div Id="buttonADM">
+                    <input class="btn btn-success" type="submit" value="Inserir">
+                    <input class="btn btn-success" type="submit" value="Atualizar">
+                    <input class="btn btn-danger" type="submit" value="Deletar">   
+                </div>
+            </div>
         </div>
         
         <div id="rodape">

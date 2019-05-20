@@ -35,8 +35,27 @@
             </div>
         </div>
         
-        <div id="corpo">
-            <h1>Usuarios</h1>
+        <div id="corpo"> 
+            <div id="FormUsuario">
+                <h2>Novo Usuario</h2>
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="GET">
+                    <p>ID</p>
+                    <input name="id" type="text">
+                    <p>Nome Completo</p>
+                    <input name="nome" type="text" autofocus="">
+                    <p>Email</p>
+                    <input name="email" type="text">
+                    <p>Usuario</p>
+                    <input name="usuario" type="text">
+                    <p>Senha</p>
+                    <input name="senha" type="password">
+                    <br>
+                    <br>
+                    <input anme="OPCAO" type="submit" value="Inserir">
+                    <input name="OPCAO" type="submit" value="Atualizar">
+                    <input name="OPCAO" type="submit" value="Deletar">
+                </form>
+            </div>
         </div>
         
         <div id="rodape">

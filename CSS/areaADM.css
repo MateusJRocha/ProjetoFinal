@@ -1,3 +1,8 @@
+body
+{
+    background-image: url("../Imagens/azul-claro.jpg");
+}
+
 #menu .navbar.navbar-default img
 {
     float: left;
@@ -6,13 +11,36 @@
 
 h1
 {
+    text-align: center;
+    margin: 3%;
+}
+
+#corpo .table.table-striped.table-hover
+{
     margin: 5%;
+    width: 90%
+}
+
+#corpo #QuemSomosAdm textarea
+{
+    width: 600px;
+    margin: 0% 34%;
+    height: 500px;
+}
+
+#corpo #FormUsuario
+{
+    width: 20%;
+    margin: 2% auto;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 2%;
 }
 
 
-#rodape
+#rodape p
 {
-    position: absolute;
-    margin: 2% 36%;
+    margin: 5%;
+    text-align: center;
     font-weight: bold;
 }

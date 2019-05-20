@@ -37,6 +37,8 @@
         
         <div id="corpo">
             <h1>Novidades</h1>
+            
+            
         </div>
         
         <div id="rodape">

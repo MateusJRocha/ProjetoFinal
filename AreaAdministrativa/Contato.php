@@ -36,7 +36,30 @@
         </div>
         
         <div id="corpo">
-            <h1>Novidades</h1>
+            <h1>Contato</h1>
+            
+            <table class="table table-striped table-hover">
+                <tr>
+                    <td>Nome Completo</td>
+                    <td>Email</td>
+                    <td>Telefone</td>
+                    <td>Mensagem</td>
+                </tr>
+                
+                <tr>
+                    <td>Mateus Justino</td>
+                    <td>Mateus@gmail.com</td>
+                    <td>(14)99810-7638</td>
+                    <td>Quando vai chegar o Livro do Harry Potter?</td>
+                </tr>
+                
+                 <tr>
+                    <td>Gabriel Viana</td>
+                    <td>gabriel@gmail.com</td>
+                    <td>Telefone</td>
+                    <td>Gostei muito da Biblioteca, atendem super bem</td>
+                 </tr>
+            </table>
         </div>
         
         <div id="rodape">

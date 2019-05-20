@@ -49,14 +49,6 @@
                     <input placeholder="Digite seu Email" name="email" type="text">
                     <p>Telefone</p>
                     <input placeholder="(14) 9-9810-7638" name="telefone" type="text">
-                   
-                    <p>Departamento</p>
-                    <select name="departamento">
-                        <option value="administracao">Administracao</option>
-                        <option valiue="diretoria">Funcionario</option>
-                        <option value="informatica">Informatica</option>
-                    </select>
-                    
                     <p>Mensagem</p>
                     <textarea></textarea>
                     <br>
