@@ -6,6 +6,7 @@
         <script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
         
         <!--Bootstrap-->
+        
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <link href="CSS/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="CSS/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>

@@ -24,10 +24,10 @@
                 <div class="container-fluid">
                     <ul class="nav navbar-nav">
                         <li><a href="index.php">Inicio</a></li>
-                        <li class="active"><a href="QuemSomos.php">Quem Somos</a></li>
+                        <li><a href="QuemSomos.php">Quem Somos</a></li>
                         <li><a href="Novidades.php">Novidades</a></li>
                         <li><a href="Contato.php">Contato</a></li>
-                        <li><a href="Usuarios.php?">Usuarios</a></li>
+                        <li class="active"><a href="Usuarios.php?">Usuarios</a></li>
                         <li><a href="../index.php">SAIR</a></li>
                         
                     </ul>
@@ -36,7 +36,7 @@
         </div>
         
         <div id="corpo">
-            <h1>Quem Somos</h1>
+            <h1>Usuarios</h1>
         </div>
         
         <div id="rodape">
