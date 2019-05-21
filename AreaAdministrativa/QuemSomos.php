@@ -41,7 +41,7 @@
             <div id="QuemSomosAdm">
                 <textarea></textarea>
                 <br>
-                <div Id="buttonADM">
+                <div id="QuemSomosAdmButton">
                     <input class="btn btn-success" type="submit" value="Inserir">
                     <input class="btn btn-success" type="submit" value="Atualizar">
                     <input class="btn btn-danger" type="submit" value="Deletar">   
