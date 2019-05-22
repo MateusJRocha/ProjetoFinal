@@ -56,6 +56,16 @@
                     <input name="OPCAO" type="submit" value="Deletar">
                 </form>
             </div>
+            
+            <table class="table table-striped table-hover">
+                <tr>
+                    <td>ID</td>
+                    <td>Nome Completo</td>
+                    <td>Email</td>
+                    <td>Usuario</td>
+                    <td>Senha</td>
+                </tr>
+            </table>
         </div>
         
         <div id="rodape">

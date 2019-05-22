@@ -38,6 +38,36 @@
         <div id="corpo">
             <h1>Novidades</h1>
             
+            <div id="NovidadesAdm">
+                <textarea></textarea>
+                <br>
+                <div id="NovidadesAdmButton">
+                    <input class="btn btn-success" type="submit" value="Inserir">
+                    <input class="btn btn-success" type="submit" value="Atualizar">
+                    <input class="btn btn-danger" type="submit" value="Deletar">   
+                </div>
+            </div>
+            
+            <div id="NovidadesAdm">
+                <textarea></textarea>
+                <br>
+                <div id="NovidadesAdmButton">
+                    <input class="btn btn-success" type="submit" value="Inserir">
+                    <input class="btn btn-success" type="submit" value="Atualizar">
+                    <input class="btn btn-danger" type="submit" value="Deletar">   
+                </div>
+            </div>
+            
+            <div id="NovidadesAdm">
+                <textarea></textarea>
+                <br>
+                <div id="NovidadesAdmButton">
+                    <input class="btn btn-success" type="submit" value="Inserir">
+                    <input class="btn btn-success" type="submit" value="Atualizar">
+                    <input class="btn btn-danger" type="submit" value="Deletar">   
+                </div>
+            </div>
+            
             
         </div>
         
