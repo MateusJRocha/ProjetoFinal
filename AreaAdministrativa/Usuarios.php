@@ -20,6 +20,31 @@
         <!--Font Awesomw-->
         <link href="../CSS/all.min.css" rel="stylesheet" type="text/css"/>
         <script src="../js/all.min.js" type="text/javascript"></script>
+        
+        <script type="text/javascript">
+            function Editar(id, nome, usuario, email)
+            {
+                document.getElementsByName('id')[0].value = id;
+                document.getElementsByName('nome')[0].value = nome;
+                document.getElementsByName('usuario')[0].value = usuario;
+                document.getElementsByName('email')[0].value = email;
+                
+                document.getElementById('inserirBtn'),style.display = "none";
+                document.getElementById('atualizarBtn'),style.display = "inline";
+                
+            }
+            
+            function Cancelar()
+            {
+                var acao = confirm("Tem certeza?\n(Essa operação noa pode ser desfeita)")
+                
+                if(acao == true)
+                {
+                    window.location.reload();
+                }
+            }
+        </script>
+        
         <title></title>
     </head>
     <body>
@@ -56,9 +81,9 @@
                     <input name="senha" type="password">
                     <br>
                     <br>
-                    <input anme="OPCAO" type="submit" value="Inserir">
-                    <input name="OPCAO" type="submit" value="Atualizar">
-                    <input name="OPCAO" type="submit" value="Deletar">
+                    <input id="inserirBtn" class="btn btn-primary" name="OPCAO" type="submit" value="Inserir">
+                    <input id="atualizarBtn" style="display: none;" class="btn btn-warning" name="OPCAO" type="submit" value="Atualizar">
+                    <input onclick="Cancelar();" id="cancelarBtn" class="btn btn-danger" name="OPCAO" type="submit" value="Cancelar">
                 </form>
             </div>
             
@@ -66,10 +91,27 @@
                 <tr>
                     <td>ID</td>
                     <td>Nome Completo</td>
-                    <td>Email</td>
                     <td>Usuario</td>
-                    <td>Senha</td>
+                    <td>Email</td>
+                    <td colspan="2">OPÇOES</td>
                 </tr>
+                
+                <?php
+                    $u = new Usuarios();
+                    $usuario = $u->ListarTodos();
+                    
+                    foreach ($usuario as $key)
+                    {
+                        echo "<tr>"
+                                ."<td>".$key->id."</td>"
+                                ."<td>".$key->nome."</td>"
+                                ."<td>".$key->usuario."</td>"
+                                ."<td>".$key->email."</td>"
+                                ."<td><a onclick=' Editar(&quot;".$key->id."&quot;, &quot;".$key->nome."&quot;, &quot;".$key->usuario."&quot, &quot;".$key->email."&quot)' href='#' class='btn btn-warning'>Editar</a> </td>"
+                                ."<td><a onclick=' return confirm(&quot; tem certeza&quot;>;' href='?id=".$key->id."&OPCAO=deletar' class='btn btn-danger'>EXCLUIR</a></td>"
+                        ."</tr>";
+                    }
+                ?>
             </table>
         </div>
         
@@ -80,37 +122,113 @@
 </html>
 
 <?php
-    if(isset($_POST['id']) &&
-            isset($_POST['nome'])&&
-            isset($_POST['email'])&&
-            isset($_POST['usuario'])&&
-            isset($_POST['senha']))
-    {
-        if(empty($_POST['nome']) &&
-               empty($_POST['email']) && 
-                empty($_POST['usuario']) &&
-                empty($_POST['senha']))
-        {
-            echo "<script type='text/javascript'> alert('Nao deixe campos em branco');</script>" ;
-        }
-        else 
-        {
-           $id = $_POST['id'];
-            $nome = $_POST['nome'];
-            $email = $_POST['email'];
-            $usuario = $_POST['usuario'];
-            $senha = $_POST['senha'];
-            $u = new Usuarios();
-            $resultado = $u->Inserir($nome, $usuario, $email, $senha);
+if(isset($_GET['id']) &&
+            isset($_GET['nome'])&&
+            isset($_GET['email'])&&
+            isset($_GET['usuario'])&&
+            isset($_GET['senha']) &&
+            isset($_GET['acao']))
+{
+            $id = $_GET['id'];
+            $nome = $_GET['nome'];
+            $email = $_GET['email'];
+            $usuario = $_GET['usuario'];
+            $senha = $_GET['senha'];
+            $senha = $_GET['senha'];
+            $opcao = $_GET['opcao'];
             
-            if($resultado == true)
+            switch ($opcao)
             {
-                header("Location:http://localhost/Projeto_Final1/AreaAdministrativa/Usuarios.php");
-                echo "<script type='text/javascript'> alert('Cadastro realizado com Sucesso');</script>";
+                case"Inserir":
+                    $resultado= $u->Inserir($nome, $usuario, $email, $senha);
+                    if($resultado == true)
+                    {
+                        echo"<script type='text/javascript'> alert('Sucesso');window.location.href='http://localhost/Projeto_Final1/AreaAdministrativa/Usuarios.php';</script>";
+                    }
+                    else
+                    {
+                        echo"<script type='text/javascript'> alert('Deu Ruim');window.location.href='http://localhost/Projeto_Final1/AreaAdministrativa/Usuarios.php';</script>";
+                    }
+                    break;
+                
+                case"Atualizar":
+                    break;
+                
+                case"Deletar":
+                    $resultado = $u->Deletar($id);
+                   if($resultado == true)
+                    {
+                        echo"<script type='text/javascript'> alert('Sucesso');window.location.href='http://localhost/Projeto_Final1/AreaAdministrativa/Usuarios.php';</script>";
+                    }
+                    else
+                    {
+                        echo"<script type='text/javascript'> alert('Deu Ruim');window.location.href='http://localhost/Projeto_Final1/AreaAdministrativa/Usuarios.php';</script>";
+                    }
+                    break;
             }
-            else
-            {
-                echo "<script type='text/javascript'> alert('Deu RUIM');</script>'";
-            }
-        }
-    }
+}
+
+    
+    
+//    if(isset($_GET['id']) && isset($_GET['acao']))
+//    {
+//        $id = $_GET['id'];
+//        $acao = $_GET['acao'];
+//        
+//        switch ($acao)
+//        {
+//            case "deletar":
+//                $u = new Usuarios();
+//                $resultado = $u->Deletar($id);
+//                
+//                if($resultado == 1)
+//                {
+//                    echo "<script type='text/javascript'> alert('Usuario removido com SUCESSO');</script>";
+//                    echo "<script type='text/javascript'> window.location.href='http://localhost/Projeto_Final1/AreaAdministrativa/Usuarios.php';</script>";
+//                }
+//                else
+//                {
+//                    echo "<script type='text/javascript'> alert('erro ao remover o usuario');</script>";
+//                }
+//                
+//            break;
+//            
+//            case "editar":
+//            break;
+//        }
+//    }
+//
+//    if(isset($_POST['id']) &&
+//            isset($_POST['nome'])&&
+//            isset($_POST['email'])&&
+//            isset($_POST['usuario'])&&
+//            isset($_POST['senha']))
+//    {
+//        if(empty($_POST['nome']) &&
+//               empty($_POST['email']) && 
+//                empty($_POST['usuario']) &&
+//                empty($_POST['senha']))
+//        {
+//            echo "<script type='text/javascript'> alert('Nao deixe campos em branco');</script>" ;
+//        }
+//        else 
+//        {
+//           $id = $_POST['id'];
+//            $nome = $_POST['nome'];
+//            $email = $_POST['email'];
+//            $usuario = $_POST['usuario'];
+//            $senha = $_POST['senha'];
+//            $u = new Usuarios();
+//            $resultado = $u->Inserir($nome, $usuario, $email, $senha);
+//            
+//            if($resultado == true)
+//            {
+//                header("Location:http://localhost/Projeto_Final1/AreaAdministrativa/Usuarios.php");
+//                echo "<script type='text/javascript'> alert ('Cadastro realizado com Sucesso');</script>";
+//            }
+//            else
+//            {
+//                echo "<script type='text/javascript'> alert('Deu RUIM');</script>'";
+//            }
+//        }
+//    }
