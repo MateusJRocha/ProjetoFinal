@@ -1,3 +1,8 @@
+<?php
+    namespace ProjetoFinal;
+    include '../Classes/Usuarios.php';
+?>
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -38,7 +43,7 @@
         <div id="corpo"> 
             <div id="FormUsuario">
                 <h2>Novo Usuario</h2>
-                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="GET">
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                     <p>ID</p>
                     <input name="id" type="text">
                     <p>Nome Completo</p>
@@ -73,3 +78,39 @@
         </div>
     </body>
 </html>
+
+<?php
+    if(isset($_POST['id']) &&
+            isset($_POST['nome'])&&
+            isset($_POST['email'])&&
+            isset($_POST['usuario'])&&
+            isset($_POST['senha']))
+    {
+        if(empty($_POST['nome']) &&
+               empty($_POST['email']) && 
+                empty($_POST['usuario']) &&
+                empty($_POST['senha']))
+        {
+            echo "<script type='text/javascript'> alert('Nao deixe campos em branco');</script>" ;
+        }
+        else 
+        {
+           $id = $_POST['id'];
+            $nome = $_POST['nome'];
+            $email = $_POST['email'];
+            $usuario = $_POST['usuario'];
+            $senha = $_POST['senha'];
+            $u = new Usuarios();
+            $resultado = $u->Inserir($nome, $usuario, $email, $senha);
+            
+            if($resultado == true)
+            {
+                header("Location:http://localhost/Projeto_Final1/AreaAdministrativa/Usuarios.php");
+                echo "<script type='text/javascript'> alert('Cadastro realizado com Sucesso');</script>";
+            }
+            else
+            {
+                echo "<script type='text/javascript'> alert('Deu RUIM');</script>'";
+            }
+        }
+    }

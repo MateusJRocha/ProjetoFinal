@@ -1,3 +1,8 @@
+<?php
+    namespace ProjetoFinal;
+    include 'Classes/Usuarios.php';
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,12 +29,12 @@
         </div>
         
         <div id="login" >
-            <form action="#" method="GET">
+            <form action="#" method="POST">
                 <h1>Area Administrativa</h1>
                 <p>Digite seu Login: </p>
-                <input type="text" placeholder="Exemplo@gmail.com">
+                <input type="text" placeholder="Exemplo@gmail.com" name="usuario">
                 <p>Digite sua Senha: </p>
-                <input type="password" placeholder="*******">
+                <input type="password" placeholder="*******" name="senha">
                 <br>
                 <br>
                 <input class="btn btn-success" type="submit" value="ENTRAR">
@@ -42,6 +47,33 @@
         </div>
     </body>
 </html>
+
+<?php
+    if(isset($_POST['usuario']) && isset($_POST['senha']))
+    {
+        if(empty($_POST['usuario']) || empty($_POST['senha']))
+        {
+            echo "<script type='text/javascript'> alert('Nao deixe campos em branco');</script>";
+        }
+        else
+        {
+            $usuario = $_POST['usuario'];
+            $senha = $_POST['senha'];
+            
+            $u = new Usuarios();
+            $resultado = $u->Login($usuario, $senha);
+            
+            if($resultado == true)
+            {
+                header("Location: http://localhost/Projeto_Final1/AreaAdministrativa");
+            }
+            else
+            {
+                "<script type='text/javascript'> alert ('Senha ou Usuario invalido');</script>";
+            }
+        }
+    }
+?>
 
 
 
