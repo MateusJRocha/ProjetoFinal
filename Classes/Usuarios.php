@@ -95,31 +95,73 @@ class Usuarios
     
     public function Deletar($id)
     {
-        $conexao = new \PDO("mysql:host=localhost; dbname=final_projeto", "root","");
-        
-        $sql = "DELETE FROM usuarios WHERE id = :id";
-        
-        $preparar = $conexao->prepare($sql);
-        $preparar->bindValue(":id" , $id);
-        
-        $resultado = $preparar->execute();
-        
-        if($resultado == 1)
+        try
         {
-            return true;
+            $conexao = new \PDO("mysql:host=localhost; dbname=final_projeto", "root","");
+
+            $sql = "DELETE FROM usuarios WHERE id = :id";
+
+            $preparar = $conexao->prepare($sql);
+            $preparar->bindValue(":id" , $id);
+
+            $resultado = $preparar->execute();
+
+            if($resultado == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-        else
+        catch (\PDOException $e)
         {
-            return false;
+            throw  new Exception("opss...".$e->getMessage());
         }
     }
     
     public function Atualizar($id, $nome, $email, $usuario, $senha)
     {
-        $conexao = new \PDO("mysql:host=localhost; dbname=final_projeto", "root","");
-        
-        $sql = "UPDATE usuarios SET nome = :nome, email = :email, usuario = :usuario, senha = :senha";
+        try  
+        {
+            
+            $conexao = new \PDO("mysql:host=localhost; dbname=final_projeto", "root","");
+
+            $sql = "UPDATE usuarios SET nome = :nome, email = :email, usuario = :usuario, senha = :senha WHERE id = :id";
+
+            $preparar = $conexao->prepare($sql);
+            $preparar->bindValue(":id", $id);
+            $preparar->bindValue(":nome", $nome);
+            $preparar->bindValue(":usuario", $usuario);
+            $preparar->bindValue("email", $email);
+
+            $senhaCriptografada = sha1($senha);
+            $preparar->bindValue(":senha", $senhaCriptografada);
+
+            $resultado = $preparar->execute();
+
+            if($resultado == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+        } 
+        catch (Exception $e) 
+        {
+             throw new Exception("Ops... Deu Ruim: "+$e->getMessage());
+        }
     }
 }
+
+//$u = new Usuarios();
+//$resultado = $u->Atualizar(3, 'teste', 'teste', 'teste', 'teste');
+//echo $resultado;
     
+//$u = new Usuarios();
+//$resultado = $u->Deletar(7);
+//echo $resultado;
 
