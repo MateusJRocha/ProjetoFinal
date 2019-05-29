@@ -1,3 +1,9 @@
+<?php
+    namespace ProjetoFinal;
+    include '../Classes/QuemSomos.php';
+    
+    $s = new QuemSomos();
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -20,7 +26,6 @@
     <body>
         <div id="menu">
             <div class="navbar navbar-default">
-                <img src="#" alt="LOGO"/>
                 <div class="container-fluid">
                     <ul class="nav navbar-nav">
                         <li><a href="index.php">Inicio</a></li>
@@ -39,12 +44,15 @@
             <h1>Quem Somos</h1>
             
             <div id="QuemSomosAdm">
-                <textarea></textarea>
+                <?php
+                    $resultado = $s->Listar();
+                    echo "<textarea>".$resultado->texto."</textarea>";
+                ?>
+                
                 <br>
                 <div id="QuemSomosAdmButton">
-                    <input class="btn btn-success" type="submit" value="Inserir">
                     <input class="btn btn-success" type="submit" value="Atualizar">
-                    <input class="btn btn-danger" type="submit" value="Deletar">   
+                    <input class="btn btn-danger" type="submit" value="Cancelar">   
                 </div>
             </div>
         </div>

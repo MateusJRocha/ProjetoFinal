@@ -20,7 +20,6 @@
     <body>
         <div id="menu">
             <div class="navbar navbar-default">
-                <img src="#" alt="LOGO"/>
                 <div class="container-fluid">
                     <ul class="nav navbar-nav">
                         <li><a href="index.php">Inicio</a></li>

@@ -50,7 +50,6 @@
     <body>
         <div id="menu">
             <div class="navbar navbar-default">
-                <img src="#" alt="LOGO"/>
                 <div class="container-fluid">
                     <ul class="nav navbar-nav">
                         <li><a href="index.php">Inicio</a></li>
@@ -123,13 +122,13 @@
 
 <?php
     if(isset($_POST['id']) &&
-                isset($_POST['nome'])&&
-                isset($_POST['email'])&&
-                isset($_POST['usuario'])&&
-                isset($_POST['senha']) &&
-                isset($_POST['OPCAO']))
-    {
-                if(empty($_POST['id']) ||
+        isset($_POST['nome'])&&
+        isset($_POST['email'])&&
+        isset($_POST['usuario'])&&
+        isset($_POST['senha']) &&
+        isset($_POST['OPCAO']))
+        {
+                if(
                     empty($_POST['nome']) ||
                     empty($_POST['email']) ||
                     empty($_POST['usuario']) ||
@@ -145,7 +144,8 @@
                     $usuario = $_POST['usuario'];
                     $senha = $_POST['senha'];
                     $opcao = $_POST['OPCAO'];
-                {
+                    
+                    $u = new Usuarios();
 
                     switch ($opcao)
                     {
@@ -178,10 +178,10 @@
                                     ."</script>";
                             }
                             break;                
-                    }
                 }
+            }
         }
-    }
+    
     else if (isset($_GET['id']) && isset($_GET['OPCAO']))
     {
        if($_GET['OPCAO'] == "deletar")
@@ -202,8 +202,8 @@
                          ."alert('Deu Ruim '); "
                          ."window.location.href='http://localhost/Projeto_Final1/AreaAdministrativa/Usuarios.php';"
                      ."</script>";
-             }
-       }
+            }
+        }
     }
 
     

@@ -1,3 +1,10 @@
+<?php
+    namespace ProjetoFinal;
+    include './Classes/QuemSomos.php';
+    
+    $s = new QuemSomos();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -43,10 +50,11 @@
             
             <div id="textoQuemSomos">
                 <p>
-                    A MJ Biblioteca (fictícia) foi criada em 13 de maio de 2019 por Mateus Justino da Rocha para a conclusão do modulo de desenvolvimento. A escolha de fazer um site para uma biblioteca veio quando lembrei do meu projeto anterior (mobile) que foi sobre biblioteca, decidi continuar a ideia e fazer o projeto (web) com o mesmo tema.
-                </p>
-                <p>
-                    O site tem o intuito de mostrar as novidades da biblioteca, para facilitar as pessoas que usam a biblioteca, não precisarem ir na biblioteca, e algumas outras coisa...  
+                    <?php
+                        $s = new QuemSomos();
+                        $resultado = $s->Listar();
+                        echo $resultado->texto;
+                    ?>
                 </p>
             </div>
         </div>
@@ -56,4 +64,8 @@
         </div>
     </body>
 </html>
+
+<!--<
+A MJ Biblioteca (fictícia) foi criada em 13 de maio de 2019 por Mateus Justino da Rocha para a conclusão do modulo de desenvolvimento. A escolha de fazer um site para uma biblioteca veio quando lembrei do meu projeto anterior (mobile) que foi sobre biblioteca, decidi continuar a ideia e fazer o projeto (web) com o mesmo tema.
+O site tem o intuito de mostrar as novidades da biblioteca, para facilitar as pessoas que usam a biblioteca, não precisarem ir na biblioteca, e algumas outras coisa...  
 

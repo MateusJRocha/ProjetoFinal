@@ -20,7 +20,6 @@
     <body>
         <div id="menu">
             <div class="navbar navbar-default">
-                <img src="#" alt="LOGO"/>
                 <div class="container-fluid">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.php">Inicio</a></li>
@@ -38,15 +37,6 @@
         <div id="corpo">
             <h1>Bem Vindo a Area Administrativa!!</h1>
             
-            <div id="QuemSomosAdm">
-                <textarea></textarea>
-                <br>
-                <div id="QuemSomosAdmButton">
-                    <input class="btn btn-success" type="submit" value="Inserir">
-                    <input class="btn btn-success" type="submit" value="Atualizar">
-                    <input class="btn btn-danger" type="submit" value="Deletar">   
-                </div>
-            </div>
         </div>
         
         <div id="rodape">
