@@ -21,6 +21,18 @@
         <!--Font Awesomw-->
         <link href="../CSS/all.min.css" rel="stylesheet" type="text/css"/>
         <script src="../js/all.min.js" type="text/javascript"></script>
+        
+        <script type="text/javascript">
+            function Cancelar()
+                {
+                    var acao = confirm("Tem certeza?\n(Essa operação não pode ser desfeita)");
+
+                    if(acao === true)
+                    {
+                        window.location.reload();
+                    }
+                }
+        </script>
         <title></title>
     </head>
     <body>
@@ -30,8 +42,6 @@
                     <ul class="nav navbar-nav">
                         <li><a href="index.php">Inicio</a></li>
                         <li class="active"><a href="QuemSomos.php">Quem Somos</a></li>
-                        <li><a href="Novidades.php">Novidades</a></li>
-                        <li><a href="Contato.php">Contato</a></li>
                         <li><a href="Usuarios.php?">Usuarios</a></li>
                         <li><a href="../index.php">SAIR</a></li>
                         
@@ -44,16 +54,19 @@
             <h1>Quem Somos</h1>
             
             <div id="QuemSomosAdm">
-                <?php
-                    $resultado = $s->Listar();
-                    echo "<textarea>".$resultado->texto."</textarea>";
-                ?>
-                
-                <br>
-                <div id="QuemSomosAdmButton">
-                    <input class="btn btn-success" type="submit" value="Atualizar">
-                    <input class="btn btn-danger" type="submit" value="Cancelar">   
-                </div>
+               <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+                   <textarea id="CampoQuemSomos" name="texto">
+                        <?php
+                            $resultado = $s->Listar();
+                            echo $resultado->texto;
+                        ?>
+                   </textarea>
+                    <br>
+                    <div id="QuemSomosAdmButton">
+                        <input class="btn btn-success" name="opcao" type="submit" value="Atualizar">
+                        <input onclick="Cancelar()" name="opcao" class="btn btn-danger" type="submit" value="Cancelar">   
+                    </div>
+               </form>
             </div>
         </div>
         
@@ -62,3 +75,41 @@
         </div>
     </body>
 </html>
+
+<?php
+    if(isset($_POST['texto']) && isset($_POST['opcao']))
+    {
+        if(empty($_POST['texto']))
+        {
+            echo "<script type='text/javascript'> alert('Não deixe campos em BRANCO');</script>";
+        }
+        else
+        {
+            $texto = $_POST['texto'];
+            $opcao = $_POST['opcao'];
+            
+            $s = new QuemSomos();
+                
+            switch ($opcao)
+            {
+                case "Atualizar":
+                    $resultado = $s->Atualizar($texto);
+                    
+                    if($resultado == 1)
+                    {
+                        echo "<script type='text/javascript'> "
+                                        ."alert('Atualizado com Sucesso'); "
+                                        ."window.location.href='http://localhost/Projeto_Final1/AreaAdministrativa/QuemSomos.php';"
+                                    ."</script>";
+                    }
+                    else
+                    {
+                        echo "<script type='text/javascript'> "
+                                        ."alert('Deu Ruim'); "
+                                        ."window.location.href='http://localhost/Projeto_Final1/AreaAdministrativa/QuemSomos.php';"
+                                    ."</script>";
+                    }
+            break;
+            }
+        }
+    }

@@ -30,8 +30,6 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.php">Inicio</a></li>
                         <li><a href="QuemSomos.php">Quem Somos</a></li>
-                        <li><a href="Novidades.php">Novidades</a></li>
-                        <li><a href="Contato.php">Contato</a></li>
                         <li><a href="Login.php">Area Administrativa</a></li>
                     </ul>
                 </div>

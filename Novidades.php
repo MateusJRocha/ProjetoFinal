@@ -1,19 +1,19 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-        <!-- JQUEY -->
+         JQUEY 
         <script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
         
-        <!--Bootstrap-->
+        Bootstrap
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <link href="CSS/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="CSS/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
         
-        <!--meu CSS -->
+        meu CSS 
         <link href="CSS/estilo.css" rel="stylesheet" type="text/css"/>
         
-        <!--Font Awesomw-->
+        Font Awesomw
         <link href="CSS/all.min.css" rel="stylesheet" type="text/css"/>
         <script src="js/all.min.js" type="text/javascript"></script>
         <title></title>
@@ -79,6 +79,6 @@
             <p> 2017-<?php echo date("Y"); ?> | TI-26 | Todos os Direitos Reservados</p>
         </div>
     </body>
-</html>
+</html>-->
 
 

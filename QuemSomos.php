@@ -36,8 +36,6 @@
                     <ul class="nav navbar-nav">
                         <li><a href="index.php">Inicio</a></li>
                         <li class="active"><a href="QuemSomos.php">Quem Somos</a></li>
-                        <li><a href="Novidades.php">Novidades</a></li>
-                        <li><a href="Contato.php">Contato</a></li>
                         <li><a href="Login.php">Area Administrativa</a></li>
                     </ul>
                 </div>
@@ -66,6 +64,6 @@
 </html>
 
 <!--<
-A MJ Biblioteca (fictícia) foi criada em 13 de maio de 2019 por Mateus Justino da Rocha para a conclusão do modulo de desenvolvimento. A escolha de fazer um site para uma biblioteca veio quando lembrei do meu projeto anterior (mobile) que foi sobre biblioteca, decidi continuar a ideia e fazer o projeto (web) com o mesmo tema.
-O site tem o intuito de mostrar as novidades da biblioteca, para facilitar as pessoas que usam a biblioteca, não precisarem ir na biblioteca, e algumas outras coisa...  
+A MJ Biblioteca (fictícia) foi criada em 13 de maio de 2019 por Mateus Justino da Rocha para a conclusão do modulo de desenvolvimento. A escolha de fazer um site para uma biblioteca veio quando lembrei do meu projeto anterior (mobile) que foi sobre biblioteca.
+O site tem o intuito de mostrar as novidades da biblioteca, para facilitar as pessoas que usam a biblioteca, não precisarem ir na biblioteca, e para as pessoas entrarem em contato com a biblioteca para tirar duvidas.
 

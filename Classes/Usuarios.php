@@ -156,11 +156,12 @@ class Usuarios
         }
     }
 }
-
+//TESTE ATUALIZAR
 //$u = new Usuarios();
 //$resultado = $u->Atualizar(3, 'teste', 'teste', 'teste', 'teste');
 //echo $resultado;
-    
+
+//TESTE DELETAR
 //$u = new Usuarios();
 //$resultado = $u->Deletar(7);
 //echo $resultado;
