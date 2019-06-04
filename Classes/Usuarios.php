@@ -156,6 +156,16 @@ class Usuarios
         }
     }
 }
+//TESTE INSERIR
+//$u = new Usuarios();
+//$resultado = $u->Inserir("Mariza", "mariza", "mariza@gmail", "123");
+//echo $resultado;
+
+//TESTE LOGIN
+//$u = new Usuarios();
+//$resultado = $u->Login("mateus", "654");
+//echo $resultado
+
 //TESTE ATUALIZAR
 //$u = new Usuarios();
 //$resultado = $u->Atualizar(3, 'teste', 'teste', 'teste', 'teste');
@@ -165,4 +175,11 @@ class Usuarios
 //$u = new Usuarios();
 //$resultado = $u->Deletar(7);
 //echo $resultado;
+
+//TESTE LISTAR TODOS
+$u = new Usuarios();
+$u ->ListarTodos();
+
+
+
 
