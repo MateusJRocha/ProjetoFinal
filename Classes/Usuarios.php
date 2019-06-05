@@ -177,8 +177,10 @@ class Usuarios
 //echo $resultado;
 
 //TESTE LISTAR TODOS
-$u = new Usuarios();
-$u ->ListarTodos();
+//$u = new Usuarios();
+//$resultado = $u ->ListarTodos();
+//print_r($resultado);
+
 
 
 

@@ -58,5 +58,11 @@
 //    $quemsomos = new QuemSomos();
 //    $resultado = $quemsomos->Atualizar('olaaa');
 //    echo $resultado;
+    
+//TESTE LISTAR
+//$u = new QuemSomos();
+//$resultado = $u ->Listar();
+//print_r($resultado);
+
 
 
